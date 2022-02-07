@@ -1,0 +1,37 @@
+https://www.youtube.com/watch?v=zxfhf-V4JFQ
+How To Make A Website Using HTML CSS And JavaScript Step By Step | Website Design Tutorial
+
+mobile phone specs
+Here in this video, you will learn how to make this website design using HTML, CSS and JavaScript. At the top there is a navigation bar with logo and navigation menu. Website's background looks very nice because of angle shape and gradient color.
+Then i have added one phone image on this website and near that image there is an icon, title and small text which display one of the features of this phone. This click and rotate function is made using very simple JavaScript that i will teach in this video.
+You will learn to make this complete design in this video step by step, So don't skip this video and keep watching till the end.
+==============
+
+
+Easy Fullscreen Landing Page With HTML & CSS
+https://www.youtube.com/watch?v=hVdTQWASliE
+
+=============
+Build 5 Projects With HTML, CSS & JavaScript
+https://www.youtube.com/watch?v=JkeyKeK3V24
+================
+Starbucks Landing Page Website Design using Html CSS & Javascript | Step By Step Web Design Tutorial
+https://www.youtube.com/watch?v=91Q6RvKvd7o
+===========================
+
+Responsive Website Landing Page Design | Title (Creative Nature) - Only Using CSS & HTML
+https://www.youtube.com/watch?v=JYWitDwHhxE
+=====================
+
+Create a Website With Video Background | HTML & CSS
+https://www.youtube.com/watch?v=8MgpE2DTTKA
+=======================
+https://www.youtube.com/watch?v=0wvrlOyGlq0
+Image Slider - With Auto-play & Manual Navigation Buttons - Using CSS, HTML & Javascript
+=====================
+Awesome Split Screen Slider Using CSS3 & JavaScript
+https://www.youtube.com/watch?v=5F0EvajMlXo
+====================
+How To Make Image Slider Using HTML And CSS With Animations Step By Step Tutorial
+https://www.youtube.com/watch?v=2XjTnfRsNGs
+============
