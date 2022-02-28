@@ -1,0 +1,117 @@
+Option Public
+Option Declare
+
+Use "SMS_Service"
+Sub Initialize
+
+
+Call init ()
+ 
+	
+End Sub
+Sub Terminate
+	
+End Sub
+ 
+%REM
+	Function init
+	Description: Comments for Function
+%END REM
+Function init() As Boolean
+	On Error GoTo errorhandler
+	'MsgBox "in init () "
+	
+	'Dim ws As New NotesUIWorkspace
+	Dim session As New NotesSession
+	Dim db As NotesDatabase
+	Dim view As NotesView
+	Dim doc As NotesDocument
+	Dim currentTime As NotesDateTime
+	Dim docExpiryTime As NotesDateTime
+	Dim expiryTimeOffset As Integer
+	Dim profDoc As NotesDocument
+	Dim invalidDoc As NotesDocument
+	Dim item As NotesItem
+	
+	' SMS Parameters ===========================
+	Dim returnCode As New XSD_STRING	
+	Dim sUserId As New XSD_STRING
+	Dim sPassword As New XSD_STRING
+	Dim sMobile As New XSD_STRING
+	Dim sMsgId As New XSD_STRING
+	Dim sMsg As New	XSD_STRING
+	Dim sMsgHeader As New XSD_STRING
+	Dim Client As New ServiceSoap_n0()	''instantiate the class.
+	sUserId.setValueFromString("123")	
+	sPassword.setValueFromString("123")
+	sMsgId.setValueFromString("123")
+	sMsgHeader.setValueFromString("Doctorz")
+	' SMS Parameters End ======================= 
+	Dim returnStatus As Integer
+	Dim opDoc As NotesDocument
+	Dim CopyDoc As NotesDocument
+	Dim ExpDoc As NotesDocument
+	Dim invalidNoDoc As NotesDocument
+	Dim bulkNotSent As NotesDocument
+	Dim replaceItem As NotesItem
+	
+	'MsgBox "in init 1a () "
+	Set db = session.CurrentDatabase
+	
+	' Get View First
+	Set view = db.GetView("SMSView")
+	Dim smsRecords As NotesDocumentCollection
+	'MsgBox "in init 2a () "
+	'Set smsRecords = view.AllEntries().Count
+	
+	Dim firstRecord As NotesDocument
+	'Loop through all records and check if leave already applied		
+	
+	Set doc = view.GetFirstDocument
+	'MsgBox "in init 2b () "
+	
+	If doc Is Nothing Then
+		MsgBox " doc is nothing - no doc in vew "
+		Exit Function
+	End If
+	
+	
+	While  Not doc Is Nothing 
+		If(CStr(doc.GetItemValue("recipientNo")(0)) <> "")Then
+					
+	''prepare the parameters.
+						
+						sMobile.setValueFromString(CStr(doc.GetItemValue("recipientNo")(0)))
+						sMsg.setValueFromString(doc.GetItemValue("message")(0))
+						
+						Set returnCode =  Client.SendSMS(sUserId, sPassword, sMobile, sMsgId , sMsg, sMsgHeader)
+						
+						returnStatus = CInt(returnCode.GetValueAsString())
+						'MsgBox " returnStatus  : " & CStr(returnStatus)
+						
+						If(returnStatus = 0) Then
+							
+							
+						ElseIf returnStatus = -2 Then 	' -2 code means invalid phone number
+							
+							
+							
+							
+						Else
+							
+							
+						End If
+						
+				End If
+			
+			
+	Wend
+	
+	
+	Exit Function
+	
+errorhandler :	
+	MsgBox "error occured in init() line " & Erl() & "  error " & Err()
+	
+	Exit Function
+End Function

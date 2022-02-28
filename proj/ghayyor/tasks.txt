@@ -1,0 +1,8 @@
+https://www.php.net/manual/en/features.commandline.webserver.php
+
+==========
+
+Tasks: 
+1.  Software for Members Allotment/ Possession. 
+2. Format of Allotment Letter / Possession Letter. 
+3. Security pages. Stamp, Sticker, printing Rate.

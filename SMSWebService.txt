@@ -1,0 +1,27 @@
+%INCLUDE "lsxsd.lss"
+Const n0 = "http://tempuri.org/"
+Class ServiceSoap_n0 As PortTypeBase
+	
+	Sub NEW
+		Call Service.Initialize ("HttpTempuriOrgService", _
+		"Service.ServiceSoap", "http://123.15.123.123/GenericService/SMSService.asmx", _
+		"ServiceSoap_n0")
+		
+	End Sub
+	
+	Function SendSMS(sUserId As XSD_STRING, sPassword As XSD_STRING, sMobile As XSD_STRING, _
+	sMsgId As XSD_STRING, sMsg As XSD_STRING, sMsgHeader As XSD_STRING) As XSD_STRING
+		Set SendSMS = Service.Invoke("SendSMS", sUserId, sPassword, sMobile, sMsgId, sMsg, sMsgHeader)
+	End Function
+	
+	Function SendSMSUniCode(sUserId As XSD_STRING, sPassword As XSD_STRING, sMobile As XSD_STRING, _
+	sMsgId As XSD_STRING, sMsg As XSD_STRING, sMsgHeader As XSD_STRING) As XSD_STRING
+		Set SendSMSUniCode = Service.Invoke("SendSMSUniCode", sUserId, sPassword, sMobile, sMsgId, sMsg, sMsgHeader)
+	End Function
+	
+	Function SendSMSWithTelco(sUserId As XSD_STRING, sPassword As XSD_STRING, sMobile As XSD_STRING, _
+	sMsgId As XSD_STRING, sMsg As XSD_STRING, sMsgHeader As XSD_STRING, sTelco As XSD_STRING) As XSD_STRING
+		Set SendSMSWithTelco = Service.Invoke("SendSMSWithTelco", sUserId, sPassword, sMobile, sMsgId, sMsg, sMsgHeader, sTelco)
+	End Function 
+	
+End Class 
